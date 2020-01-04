@@ -1,0 +1,16 @@
+.healthify-logo {
+    object-fit: contain;
+    &.healthify-logo--xs {
+        width: 100px;
+    }
+    &.healthify-logo--sm {
+        width: 150px;
+    }
+    &.healthify-logo--md {
+        width: 200px;
+    }
+    &.healthify-logo--lg {
+        width: 250px;
+    }
+
+}

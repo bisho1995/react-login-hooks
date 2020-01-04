@@ -3,3 +3,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.margin-left-sm {
+  margin-left: 5px;
+}
+
+.margin-left-lg {
+  margin-left: 15px;
+}

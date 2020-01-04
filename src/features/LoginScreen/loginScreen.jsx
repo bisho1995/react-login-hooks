@@ -7,7 +7,7 @@ import { LazyLogin as Login } from '../../LazyComponents';
 const LoginScreen = () => (
   <ErrorBoundary>
     <div>
-      <Header />
+      <Header sectionInfo="Accounts" />
       <Login />
     </div>
   </ErrorBoundary>
