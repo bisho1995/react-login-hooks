@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
 body {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -93,6 +98,11 @@ body {
 .input-error {
   border: 1px solid red
 }
+
+.input-success {
+  border: 1px solid green
+}
+
 .red-text {
   color: red
 }

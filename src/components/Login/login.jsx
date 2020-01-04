@@ -52,8 +52,8 @@ const Login = ({ className, ...props }) => {
       {loading ? <Spinner /> : null}
       {error ? <div className="red-text">{error}</div> : null}
       <form onSubmit={formSubmit}>
-        <FormInput type="email" name="email" placeholder="Enter your Email" required value={email.value} error={email.error} onChange={handleEmailChange} />
-        <FormInput type="password" name="password" placeholder="Enter your Password" required value={password.value} error={password.error} onChange={handlePasswordChange} />
+        <FormInput type="email" name="email" placeholder="Enter your Email" required value={email.value} error={email.error} success={isValidEmail(email.value).status} onChange={handleEmailChange} />
+        <FormInput type="password" name="password" placeholder="Enter your Password" required value={password.value} error={password.error} success={isValidPassword(password.value).status} onChange={handlePasswordChange} />
         <FormInput type="submit" name="submit" value="Login" className="login-section-submit" disabled={disabled || loading} />
       </form>
     </div>
