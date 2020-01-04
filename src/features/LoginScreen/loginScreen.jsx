@@ -3,12 +3,15 @@ import { Header } from '../../components';
 import ErrorBoundary from '../../ErrorBoundary';
 // eslint-disable-next-line import/named
 import { LazyLogin as Login } from '../../LazyComponents';
+import "./LoginScreen.scss"
 
 const LoginScreen = () => (
   <ErrorBoundary>
-    <div>
+    <div className="login-screen">
       <Header sectionInfo="Accounts" />
-      <Login />
+      <div className="login-screen-login">
+        <Login className="center-section-horizontal"/>
+      </div>
     </div>
   </ErrorBoundary>
 );

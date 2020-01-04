@@ -21,3 +21,78 @@ body {
 .margin-left-lg {
   margin-left: 15px;
 }
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+
+[disabled] {
+  opacity: 0.8;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.margin-md {
+  margin: 10px;
+}
+.margin-vertical-md {
+  margin: 10px 0;
+}
+.margin-vertical-lg {
+  margin: 15px 0;
+}
+
+.padding-xs {
+  padding: 3px;
+}
+
+.padding-sm {
+  padding: 5px;
+}
+.padding-md {
+  padding: 10px;
+}
+.padding-left-lg {
+  padding-left: 10px;
+}
+
+.center-section-horizontal {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center-section-vertical {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.position-relative {
+  position: relative;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+.display-block {
+  display: block;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.input-error {
+  border: 1px solid red
+}
+.red-text {
+  color: red
+}
