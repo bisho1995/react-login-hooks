@@ -42,7 +42,7 @@ const Login = ({ className, ...props }) => {
   }, [email, password, disabled]);
 
   return (
-    <div className={`login-section text-center padding-md ${className}`} {...props}>
+    <div className={`login-section text-center ${className}`} {...props}>
       <Logo className="margin-md" />
       <br />
       <h1 className="no-margin login-section-header">Sign in</h1>
