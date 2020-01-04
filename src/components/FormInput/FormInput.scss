@@ -1,5 +1,10 @@
 .form-input {
     input {
         height: 30px;
+        width: 95%;
+    }
+    input[disabled] {
+        background: #e2e1e0;
+        color: black;
     }
 }

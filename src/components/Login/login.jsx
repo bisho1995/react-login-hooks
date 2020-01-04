@@ -10,17 +10,34 @@ const Login = ({ className, ...props }) => {
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
   const [disabled, setDisabled] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const emailValidation = isValidEmail(email.value);
-  const passwordValidation = isValidPassword(password.value);
-
-  const formSubmit = useCallback((e) => {
+  const formSubmit = useCallback(async (e) => {
     e.preventDefault();
-  }, []);
 
+    setLoading(true);
+    try {
+      await (await fetch('http://www.mocky.io/v2/5d9d9219310000153650e30b')).json();
+
+      if (error)setError('');
+    } catch (err) {
+      console.error(err);
+      setError('Oops! something went wrong, please try again');
+    }
+    setLoading(false);
+  }, [error]);
+
+  const handleEmailChange = useCallback((e) => {
+    setEmail({ value: e.target.value, error: isValidEmail(e.target.value).error });
+  }, [setEmail]);
+
+  const handlePasswordChange = useCallback((e) => {
+    setPassword({ value: e.target.value, error: isValidPassword(e.target.value).error });
+  }, [setPassword]);
 
   useEffect(() => {
-    const newDisabledState = !(emailValidation.status && passwordValidation.status);
+    const newDisabledState = email.error || password.error;
     if (disabled !== newDisabledState) setDisabled(newDisabledState);
   }, [email, password, disabled]);
 
@@ -31,10 +48,13 @@ const Login = ({ className, ...props }) => {
       <h1 className="no-margin login-section-header">Sign in</h1>
       <br />
       Use your Healthifyme Account
+      <br />
+      {loading ? <Spinner /> : null}
+      {error ? <div className="red-text">{error}</div> : null}
       <form onSubmit={formSubmit}>
-        <FormInput type="email" name="email" placeholder="Enter your Email" required value={email.value} error={email.error} onChange={(e) => { setEmail({ ...email, value: e.target.value }); }} />
-        <FormInput type="password" name="password" placeholder="Enter your Password" required value={password.value} error={password.error} onChange={(e) => { setPassword({ ...password, value: e.target.value }); }} />
-        <FormInput type="submit" name="submit" value="Login" className="login-section-submit" disabled={disabled} />
+        <FormInput type="email" name="email" placeholder="Enter your Email" required value={email.value} error={email.error} onChange={handleEmailChange} />
+        <FormInput type="password" name="password" placeholder="Enter your Password" required value={password.value} error={password.error} onChange={handlePasswordChange} />
+        <FormInput type="submit" name="submit" value="Login" className="login-section-submit" disabled={disabled || loading} />
       </form>
     </div>
   );
