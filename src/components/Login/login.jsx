@@ -42,7 +42,7 @@ const Login = ({ className, ...props }) => {
   useEffect(() => {
     const newDisabledState = !!(emailValidity.error || passwordValidity.error);
     if (disabled !== newDisabledState) setDisabled(newDisabledState);
-  }, [email, password, disabled]);
+  }, [emailValidity.error, passwordValidity.error, disabled]);
 
   return (
     <div className={`login-section text-center ${className}`} {...props}>
