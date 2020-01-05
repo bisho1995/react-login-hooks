@@ -31,10 +31,13 @@ ErrorBoundary.propTypes = {
 };
 
 ErrorBoundary.defaultProps = {
-  fallbackUI: <div>
+  fallbackUI: <div style={{
+    height: '100vh', background: 'red', color: 'white', textAlign: 'center', fontSize: '30px', paddingTop: '50px',
+  }}
+  >
     <i className="fa fa-bug" />
     {' '}
-    Oops! Something went wrong
+    Oops! Something went wrong, please refresh the page
   </div>,
 };
 
