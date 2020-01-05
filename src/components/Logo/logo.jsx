@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Logo.scss';
 
-const Logo = ({ size }) => <img className={`healthify-logo healthify-logo--${size}`} src="/healthifyme.png" alt="logo" />;
+const Logo = ({ size }) => <img data-test="healthify-logo" className={`healthify-logo healthify-logo--${size}`} src="/healthifyme.png" alt="logo" />;
 Logo.propTypes = {
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
 };

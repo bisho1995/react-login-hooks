@@ -7,7 +7,7 @@ import './LoginScreen.scss';
 
 const LoginScreen = () => (
   <ErrorBoundary>
-    <div className="login-screen">
+    <div data-test="login-screen" className="login-screen">
       <Header sectionInfo="Accounts" />
       <div className="login-screen-login">
         <Login className="center-section-horizontal" />

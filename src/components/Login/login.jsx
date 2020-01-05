@@ -42,10 +42,10 @@ const Login = ({ className, ...props }) => {
   useEffect(() => {
     const newDisabledState = !!(emailValidity.error || passwordValidity.error);
     if (disabled !== newDisabledState) setDisabled(newDisabledState);
-  }, [emailValidity.error, passwordValidity.error, disabled])
+  }, [emailValidity.error, passwordValidity.error, disabled]);
 
   return (
-    <div className={`login-section text-center ${className}`} {...props}>
+    <div data-test="login-section" className={`login-section text-center ${className}`} {...props}>
       <Logo className="margin-md" />
       <br />
       <h1 className="no-margin login-section-header">Sign in</h1>
@@ -53,7 +53,7 @@ const Login = ({ className, ...props }) => {
       Use your Healthifyme Account
       <br />
       {loading ? <Spinner /> : null}
-      {error ? <div className="red-text">{error}</div> : null}
+      {error ? <div data-test="login-section-message" className="red-text">{error}</div> : null}
       <form onSubmit={formSubmit}>
         <FormInput type="email" name="email" placeholder="Enter your Email" required value={email.value} error={email.error} success={emailValidity.status} onChange={handleEmailChange} />
         <FormInput type="password" name="password" placeholder="Enter your Password" required value={password.value} error={password.error} success={passwordValidity.status} onChange={handlePasswordChange} />

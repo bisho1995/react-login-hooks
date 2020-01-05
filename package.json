@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test a",
+    "test": "react-scripts test a",
     "eject": "react-scripts eject",
     "eslint:fix": "yarn eslint './src/' --fix"
   },
