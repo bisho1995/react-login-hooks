@@ -57,7 +57,7 @@ const Login = ({ className, ...props }) => {
       <form onSubmit={formSubmit}>
         <FormInput type="email" name="email" placeholder="Enter your Email" required value={email.value} error={email.error} success={emailValidity.status} onChange={handleEmailChange} />
         <FormInput type="password" name="password" placeholder="Enter your Password" required value={password.value} error={password.error} success={passwordValidity.status} onChange={handlePasswordChange} />
-        <FormInput type="submit" name="submit" value="Login" className="login-section-submit" disabled={disabled || loading} />
+        <FormInput type="submit" name="submit" value="Login" className="login-section-submit cursor-pointer" disabled={disabled || loading} />
       </form>
     </div>
   );
