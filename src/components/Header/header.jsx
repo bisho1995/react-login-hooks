@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import './Header.scss';
 import { Logo } from '../index';
 
-const Header = ({ sectionInfo, className, ...rest }) => (
+const Header = ({ headerInfo, className, ...rest }) => (
   <header data-test="healthify-header" className={`healthify-header padding-left-lg flex flex-align-center ${className}`} {...rest}>
     <Logo size="xs" />
-    {sectionInfo ? <span className="margin-left-sm">{` | ${sectionInfo}`}</span> : null}
+    {headerInfo ? <span data-test="healthify-header-info" className="margin-left-sm">{` | ${headerInfo}`}</span> : null}
   </header>
 );
 
 Header.propTypes = {
-  sectionInfo: PropTypes.string,
+  headerInfo: PropTypes.string,
   className: PropTypes.string,
 };
 Header.defaultProps = {
-  sectionInfo: '',
+  headerInfo: '',
   className: '',
 };
 
