@@ -7,7 +7,7 @@ const FormInput = ({
 }) => (
   <div data-test="form-input" className="form-input margin-vertical-lg">
     <input className={`padding-xs ${error ? 'input-error' : ''} ${success ? 'input-success' : ''} ${className}`} value={value} onChange={onChange} type={type} {...props} />
-    {error ? <div className="red-text text-left form-input-message">{error}</div> : null}
+    {error ? <div data-test="form-input-message"  className="red-text text-left form-input-message">{error}</div> : null}
   </div>
 );
 
